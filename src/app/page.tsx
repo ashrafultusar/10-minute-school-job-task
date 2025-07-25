@@ -6,6 +6,7 @@ import Instructors from "@/components/Instructors";
 import LayoutStructure from "@/components/LayoutStructure";
 import CourseLayout from "@/components/CourseLayout";
 import LearningOutcomes from "@/components/LearningOutcomes";
+import ExclusiveFeature from "@/components/ExclusiveFeature";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Instructors></Instructors>
          <CourseLayout></CourseLayout>
          <LearningOutcomes></LearningOutcomes>
+         <ExclusiveFeature/>
         </div>
 
         {/* RIGHT Side */}
