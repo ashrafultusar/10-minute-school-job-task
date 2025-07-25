@@ -24,10 +24,10 @@ const layoutItems = [
   },
 ];
 
-const Overview = () => {
+const CourseLayout = () => {
   return (
-    <div>
-         <h1 className="md:text-2xl">{"Course instructor"}</h1>
+    <div >
+      <h1 className="md:text-2xl mb-4">How the course is laid out</h1>
       <section className="mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0F172A] text-white p-6 ">
           {layoutItems.map((item, index) => (
@@ -74,4 +74,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default CourseLayout;

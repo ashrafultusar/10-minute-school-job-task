@@ -4,7 +4,7 @@ import React from "react";
 const Instructors = () => {
   return (
     <div className="text-black md:text-2xl">
-      <h1>{"Course instructor"}</h1>
+      <h1 className="mb-4">{"Course instructor"}</h1>
 
       <div className="flex items-center gap-4 p-4  rounded-lg shadow-sm bg-white">
         <Image
