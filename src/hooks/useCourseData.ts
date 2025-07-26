@@ -5,7 +5,7 @@ export const useCourseData = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('https://tm.dev.10minuteschool.com/api/v1/products/ielts-course?lang=en', {
+    fetch('https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course', {
       headers: {
         'X-TENMS-SOURCE-PLATFORM': 'web',
         Accept: 'application/json',

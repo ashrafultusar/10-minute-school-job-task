@@ -3,7 +3,7 @@ import React from "react";
 const CheckList = () => {
   return (
     <div>
-      <div className="max-w-sm mx-auto p-6 bg-white border border-gray-200 ">
+      <div className="max-w-sm mx-auto p-6 bg-white border border-gray-200">
         <div className="mb-4 text-center">
           <p className="text-3xl font-bold text-gray-800">
             ৳3850{" "}
@@ -31,13 +31,11 @@ const CheckList = () => {
           <p>💬 Facebook Support Group</p>
           <p>⏳ Course Validity Lifetime</p>
         </div>
-
-        
       </div>
       <div className="mt-6 text-center text-sm text-gray-500">
-          কোর্সটি সম্পর্কে বিস্তারিত জানতে
-          <p className="text-green-600 font-bold mt-1">📞 ফোন করুন (16910)</p>
-        </div>
+        কোর্সটি সম্পর্কে বিস্তারিত জানতে
+        <p className="text-green-600 font-bold mt-1">📞 ফোন করুন (16910)</p>
+      </div>
     </div>
   );
 };

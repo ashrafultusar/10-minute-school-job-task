@@ -7,23 +7,25 @@ import LayoutStructure from "@/components/LayoutStructure";
 import CourseLayout from "@/components/CourseLayout";
 import LearningOutcomes from "@/components/LearningOutcomes";
 import ExclusiveFeature from "@/components/ExclusiveFeature";
+import CourseDetails from "@/components/CourseDetails";
 
 export default function Home() {
   return (
     <div className="text-black ">
-      <Header></Header>
+      <Header />
       <LayoutStructure>
         {/* LEFT Side */}
         <div className="md:col-span-7 space-y-6 max-w-5xl">
-          <Instructors></Instructors>
-         <CourseLayout></CourseLayout>
-         <LearningOutcomes></LearningOutcomes>
-         <ExclusiveFeature/>
+          <Instructors />
+          <CourseLayout />
+          <LearningOutcomes />
+          <ExclusiveFeature />
+          <CourseDetails />
         </div>
 
         {/* RIGHT Side */}
         <div className="md:col-span-5 space-y-6">
-          <CheckList></CheckList>
+          <CheckList />
         </div>
       </LayoutStructure>
     </div>
