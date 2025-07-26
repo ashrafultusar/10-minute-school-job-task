@@ -22,8 +22,8 @@ console.log(data);
         <div className="">
           <Instructors data={data?.data?.sections[2]} />
           <CourseLayout data={data?.data?.sections[3]} data1={data?.data?.sections[4]} />
-          <LearningOutcomes />
-          <ExclusiveFeature />
+          <LearningOutcomes data={data?.data?.sections[5]}/>
+          <ExclusiveFeature data={data?.data?.sections[8]}/>
           <CourseDetails />
         </div>
 
