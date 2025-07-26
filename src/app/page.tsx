@@ -16,7 +16,7 @@ export default function Home() {
 console.log(data);
   return (
     <div className="text-black ">
-      <Header />
+      <Header data={data}/>
       <LayoutStructure >
         {/* LEFT Side */}
         <div className="">
@@ -29,8 +29,8 @@ console.log(data);
 
         {/* RIGHT Side */}
         <div className="md:col-span-5 sticky top-0">
-          <Trailer />
-          <CheckList />
+          <Trailer data={data?.data?.media}/>
+          <CheckList data={data?.data?.checklist}/>
         </div>
       </LayoutStructure>
     </div>

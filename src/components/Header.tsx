@@ -3,7 +3,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-const Header = () => {
+const Header = ({data}) => {
 
   return (
     <div className="bg-[#030116] text-white flex items-center min-h-[300px] py-8 md:py-0">

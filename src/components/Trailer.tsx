@@ -12,23 +12,21 @@ import 'swiper/css/thumbs';
 
 type Slide = {
   id: number;
-  src: string;
-  alt: string;
+  name: string;
+  resource_type: 'image' | 'video';
+  resource_value: string;
+  thumbnail_url?: string;
 };
 
-const slides: Slide[] = [
-  { id: 1, src: '/pdf-preview.jpg', alt: 'Slide 1' },
-  { id: 2, src: '/pdf-preview.jpg', alt: 'Slide 2' },
-  { id: 3, src: '/pdf-preview.jpg', alt: 'Slide 3' },
-  { id: 4, src: '/pdf-preview.jpg', alt: 'Slide 4' },
-  { id: 5, src: '/pdf-preview.jpg', alt: 'Slide 5' },
-];
+interface TrailerProps {
+  data: Slide[];
+}
 
-const Trailer: React.FC = () => {
+const Trailer: React.FC<TrailerProps> = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <div className="w-full max-w-sm mx-auto p-6 bg-white  ">
+    <div className=" max-w-sm mx-auto p-6 bg-white">
       {/* Main Swiper */}
       <Swiper
         modules={[Navigation, Thumbs]}
@@ -37,15 +35,27 @@ const Trailer: React.FC = () => {
         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
         className="mainSwiper"
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              width={800}
-              height={450}
-              className="rounded-lg object-cover"
-            />
+        {data?.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-full h-[200px] relative rounded-lg overflow-hidden">
+              {slide.resource_type === 'video' ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${slide.resource_value}`}
+                  title={slide.name}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <Image
+                  src={slide.resource_value}
+                  alt={slide.name || 'Image Slide'}
+                  fill
+                  
+                  className="object-cover"
+                />
+              )}
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -59,15 +69,21 @@ const Trailer: React.FC = () => {
         watchSlidesProgress
         className="thumbSwiper mt-4"
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <Image
-              src={slide.src}
-              alt={`Thumb ${slide.id}`}
-              width={150}
-              height={80}
-              className="rounded-md border hover:border-blue-500"
-            />
+        {data?.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-[60px] h-[40px] relative">
+              <Image
+                src={
+                  slide.thumbnail_url ||
+                  (slide.resource_type === 'image'
+                    ? slide.resource_value
+                    : `https://img.youtube.com/vi/${slide.resource_value}/0.jpg`)
+                }
+                alt={`Thumb ${index + 1}`}
+                fill
+                className="object-cover rounded-md border-2 border-transparent hover:border-blue-500 swiper-slide-thumb-active:border-blue-600"
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
