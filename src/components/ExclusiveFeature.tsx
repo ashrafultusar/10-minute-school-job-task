@@ -20,7 +20,7 @@ const ExclusiveFeature: React.FC<ExclusiveFeatureProps> = ({ data }) => {
  
 
   return (
-    <div>
+    <div className="mb-10">
       <h1 className="mb-4 text-black md:text-2xl">{data?.name}</h1>
 
       <div className="bg-white rounded-lg shadow p-4 md:p-6 space-y-6 max-w-4xl mx-auto">

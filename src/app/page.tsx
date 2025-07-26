@@ -24,7 +24,7 @@ console.log(data);
           <CourseLayout data={data?.data?.sections[3]} data1={data?.data?.sections[4]} />
           <LearningOutcomes data={data?.data?.sections[5]}/>
           <ExclusiveFeature data={data?.data?.sections[8]}/>
-          <CourseDetails />
+          <CourseDetails data={data?.data?.sections[7]}/>
         </div>
 
         {/* RIGHT Side */}
