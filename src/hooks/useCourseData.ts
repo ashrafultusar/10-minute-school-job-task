@@ -1,21 +1,27 @@
-'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const useCourseData = () => {
-  const [data, setData] = useState(null);
+  const { language } = useLanguage();
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    fetch('https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course', {
-      headers: {
-        'X-TENMS-SOURCE-PLATFORM': 'web',
-        Accept: 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.log('Error fetching data:', err));
-  }, []);
-  
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course?lang=${language}`,
+        {
+          headers: {
+            "X-TENMS-SOURCE-PLATFORM": "web",
+            accept: "application/json",
+          },
+        }
+      );
+      const result = await res.json();
+      setData(result);
+    };
+
+    fetchData();
+  }, [language]);
 
   return { data };
 };

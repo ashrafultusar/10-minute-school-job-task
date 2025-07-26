@@ -8,23 +8,28 @@ import CourseLayout from "@/components/CourseLayout";
 import LearningOutcomes from "@/components/LearningOutcomes";
 import ExclusiveFeature from "@/components/ExclusiveFeature";
 import CourseDetails from "@/components/CourseDetails";
+import { useCourseData } from "@/hooks/useCourseData";
+import Trailer from "@/components/Trailer";
 
 export default function Home() {
+  const { data } = useCourseData();
+console.log(data);
   return (
     <div className="text-black ">
       <Header />
-      <LayoutStructure>
+      <LayoutStructure >
         {/* LEFT Side */}
-        <div className="md:col-span-7 space-y-6 max-w-5xl">
-          <Instructors />
-          <CourseLayout />
+        <div className="">
+          <Instructors data={data?.data?.sections[2]} />
+          <CourseLayout data={data?.data?.sections[3]} data1={data?.data?.sections[4]} />
           <LearningOutcomes />
           <ExclusiveFeature />
           <CourseDetails />
         </div>
 
         {/* RIGHT Side */}
-        <div className="md:col-span-5 space-y-6">
+        <div className="md:col-span-5 sticky top-0">
+          <Trailer />
           <CheckList />
         </div>
       </LayoutStructure>
