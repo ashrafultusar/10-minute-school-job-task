@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-
 type LayoutItem = {
   icon: string;
   id: string;
@@ -39,7 +38,6 @@ type CourseLayoutProps = {
   };
 };
 
-
 const CourseLayout: React.FC<CourseLayoutProps> = ({ data, data1 }) => {
   const pdf = data1?.values?.[0];
 
@@ -61,7 +59,9 @@ const CourseLayout: React.FC<CourseLayoutProps> = ({ data, data1 }) => {
               </div>
               <div>
                 <h3 className="font-bold text-md mb-1">{item.title}</h3>
-                <p className="text-sm leading-snug opacity-70">{item.subtitle}</p>
+                <p className="text-sm leading-snug opacity-70">
+                  {item.subtitle}
+                </p>
               </div>
             </div>
           ))}

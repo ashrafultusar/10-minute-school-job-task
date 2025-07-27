@@ -4,21 +4,26 @@ import React from "react";
 interface Instructor {
   name: string;
   description: string;
+  image:string
 }
 
 interface InstructorsData {
   name: string;
   values: Instructor[];
+  
 }
 
 const Instructors = ({ data }: { data: InstructorsData }) => {
+
+
+
   return (
     <div className="text-black md:text-2xl mb-8">
       <h1 className="mb-4">{data?.name}</h1>
 
       <div className="flex items-center gap-4 p-4 rounded-lg shadow-sm bg-white">
         <Image
-          src="/Instructors.jpg"
+          src={data?.values[0]?.image}
           alt="Course Instructor"
           width={64}
           height={64}

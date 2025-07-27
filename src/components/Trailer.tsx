@@ -27,7 +27,7 @@ const Trailer: React.FC<TrailerProps> = ({ data }) => {
 
   return (
     <div className=" max-w-sm mx-auto p-2 bg-white">
-      {/* Main Swiper */}
+
       <Swiper
         modules={[Navigation, Thumbs]}
         spaceBetween={10}
@@ -60,7 +60,7 @@ const Trailer: React.FC<TrailerProps> = ({ data }) => {
         ))}
       </Swiper>
 
-      {/* Thumbnail Swiper */}
+      
       <Swiper
         onSwiper={(swiper) => setThumbsSwiper(swiper)}
         modules={[Thumbs]}

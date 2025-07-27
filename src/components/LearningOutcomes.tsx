@@ -1,7 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-// ✅ Type definition
 type LearningOutcomeItem = {
   color: string;
   icon: string;
