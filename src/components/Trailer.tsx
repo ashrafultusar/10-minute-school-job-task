@@ -26,7 +26,7 @@ const Trailer: React.FC<TrailerProps> = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <div className=" max-w-sm mx-auto p-6 bg-white">
+    <div className=" max-w-sm mx-auto p-2 bg-white">
       {/* Main Swiper */}
       <Swiper
         modules={[Navigation, Thumbs]}

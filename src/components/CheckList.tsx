@@ -18,7 +18,7 @@ const CheckList: React.FC<CheckListProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="max-w-sm mx-auto p-6 bg-white">
+      <div className="max-w-sm mx-auto p-2 bg-white">
         {/* Price Section */}
         <div className="mb-4">
           <p className="text-3xl font-bold text-gray-800">৳1000 </p>
@@ -49,7 +49,7 @@ const CheckList: React.FC<CheckListProps> = ({ data }) => {
         </div>
       </div>
 
-      <div className="mt-6 flex justify-center items-center text-center gap-2 text-sm text-gray-500">
+      <div className="mt-2 flex justify-center items-center text-center gap-2 text-[10px] md:text-sm text-gray-500">
         কোর্সটি সম্পর্কে বিস্তারিত জানতে
         <p className="text-green-600 font-bold mt-1">📞 ফোন করুন (16910)</p>
       </div>

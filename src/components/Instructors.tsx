@@ -12,8 +12,6 @@ interface InstructorsData {
 }
 
 const Instructors = ({ data }: { data: InstructorsData }) => {
-  
-
   return (
     <div className="text-black md:text-2xl mb-8">
       <h1 className="mb-4">{data?.name}</h1>
@@ -39,11 +37,6 @@ const Instructors = ({ data }: { data: InstructorsData }) => {
               __html: data?.values[0]?.description,
             }}
           />
-
-          <p className="text-sm text-gray-700">
-            BA, MA (English), University of Dhaka;
-          </p>
-          <p className="text-sm text-gray-700">IELTS: 8.5</p>
         </div>
       </div>
     </div>

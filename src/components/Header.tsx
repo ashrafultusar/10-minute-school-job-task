@@ -24,7 +24,7 @@ const Header:React.FC<HeaderProps> = ({ data }) => {
 
          
           <div className="flex items-center gap-2 text-sm">
-            <div className="flex text-yellow-400 text-xl gap-1">
+            <div className="flex  text-yellow-400 text-xl gap-1">
               <FaStar />
               <FaStar />
               <FaStar />
@@ -37,7 +37,7 @@ const Header:React.FC<HeaderProps> = ({ data }) => {
           </div>
 
           <p
-            className="text-sm md:text-base leading-relaxed text-gray-300"
+            className="text-sm opacity-70 md:text-base leading-relaxed text-gray-300"
             dangerouslySetInnerHTML={{
               __html: description,
             }}

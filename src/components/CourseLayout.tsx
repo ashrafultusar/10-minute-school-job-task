@@ -61,7 +61,7 @@ const CourseLayout: React.FC<CourseLayoutProps> = ({ data, data1 }) => {
               </div>
               <div>
                 <h3 className="font-bold text-md mb-1">{item.title}</h3>
-                <p className="text-sm leading-snug">{item.subtitle}</p>
+                <p className="text-sm leading-snug opacity-70">{item.subtitle}</p>
               </div>
             </div>
           ))}

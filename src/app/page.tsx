@@ -1,42 +1,3 @@
-// "use client";
-
-// import CheckList from "@/components/CheckList";
-// import Header from "@/components/Header";
-// import Instructors from "@/components/Instructors";
-// import LayoutStructure from "@/components/LayoutStructure";
-// import CourseLayout from "@/components/CourseLayout";
-// import LearningOutcomes from "@/components/LearningOutcomes";
-// import ExclusiveFeature from "@/components/ExclusiveFeature";
-// import CourseDetails from "@/components/CourseDetails";
-// import { useCourseData } from "@/hooks/useCourseData";
-// import Trailer from "@/components/Trailer";
-
-// export default function Home() {
-//   const { data } = useCourseData();
-
-//   return (
-//     <div className="text-black ">
-//       <Header data={data}/>
-//       <LayoutStructure >
-//         {/* LEFT Side */}
-//         <div className="">
-//           <Instructors data={data?.data?.sections[2]} />
-//           <CourseLayout data={data?.data?.sections[3]} data1={data?.data?.sections[4]} />
-//           <LearningOutcomes data={data?.data?.sections[5]}/>
-//           <ExclusiveFeature data={data?.data?.sections[8]}/>
-//           <CourseDetails data={data?.data?.sections[7]}/>
-//         </div>
-
-//         {/* RIGHT Side */}
-//         <div className="md:-mt-72">
-//           <Trailer data={data?.data?.media}/>
-//           <CheckList data={data?.data?.checklist}/>
-//         </div>
-//       </LayoutStructure>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useCourseData } from "@/hooks/useCourseData";
@@ -53,12 +14,11 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const { data } = useCourseData();
-
+console.log(data);
   const rightRef = useRef<HTMLDivElement | null>(null);
   const trailerRef = useRef<HTMLDivElement | null>(null);
 
   const [isSticky, setIsSticky] = useState(false);
-
   const [rightOffsetLeft, setRightOffsetLeft] = useState(0);
   const [rightWidth, setRightWidth] = useState(0);
 
@@ -72,7 +32,6 @@ export default function Home() {
 
       if (rightRef.current) {
         const rect = rightRef.current.getBoundingClientRect();
-
         setRightOffsetLeft(rect.left);
         setRightWidth(rect.width);
       }
@@ -90,8 +49,12 @@ export default function Home() {
 
   return (
     <div className="text-black">
+      {/* Header */}
       <Header data={data} />
-
+      <div className="md:hidden px-4 my-4 space-y-4">
+        <Trailer data={data?.data?.media} />
+        <CheckList data={data?.data?.checklist} />
+      </div>
       <LayoutStructure>
         {/* LEFT Side */}
         <div>
@@ -105,16 +68,16 @@ export default function Home() {
           <CourseDetails data={data?.data?.sections[7]} />
         </div>
 
-        {/* RIGHT Side */}
+        {/* RIGHT Side (Desktop only) */}
         <div className="hidden md:block md:-mt-72" ref={rightRef}>
           <div ref={trailerRef}>
             <Trailer data={data?.data?.media} />
           </div>
-
           {!isSticky && <CheckList data={data?.data?.checklist} />}
         </div>
       </LayoutStructure>
 
+    
       {isSticky && (
         <div
           className="hidden md:block fixed z-50"
