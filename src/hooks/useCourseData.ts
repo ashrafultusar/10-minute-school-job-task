@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+
+
 export const useCourseData = () => {
   const { language } = useLanguage();
   const [data, setData] = useState<any>(null);
