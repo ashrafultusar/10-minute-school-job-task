@@ -13,7 +13,7 @@ import Trailer from "@/components/Trailer";
 
 export default function Home() {
   const { data } = useCourseData();
-console.log(data);
+
   return (
     <div className="text-black ">
       <Header data={data}/>
@@ -28,7 +28,7 @@ console.log(data);
         </div>
 
         {/* RIGHT Side */}
-        <div className="md:col-span-5 sticky top-0">
+        <div className="md:col-span-5">
           <Trailer data={data?.data?.media}/>
           <CheckList data={data?.data?.checklist}/>
         </div>
