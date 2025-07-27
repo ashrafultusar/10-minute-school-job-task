@@ -1,6 +1,7 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiPhoneCall, FiSearch, FiX } from "react-icons/fi";
 
@@ -19,7 +20,7 @@ const Navbar = () => {
               {mobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
           </div>
-          <Image src="/logo.png" alt="Logo" width={64} height={64} />
+         <Link href={'/'}> <Image  src="/logo.png" alt="Logo" width={64} height={64} /></Link>
         </div>
 
         <div className="hidden lg:flex items-center border rounded-full px-3 py-1 flex-1 max-w-xl">

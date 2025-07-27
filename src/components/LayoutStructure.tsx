@@ -1,13 +1,3 @@
-// const LayoutStructure = ({ children }: { children: React.ReactNode }) => {
-//   return (
-//     <section className="py-8 px-4">
-//       <div className="max-w-[1200px] mx-auto flex  gap-8">{children}</div>
-//     </section>
-//   );
-// };
-
-// export default LayoutStructure;
-
 
 const LayoutStructure = ({ children }: { children: React.ReactNode }) => {
   return (

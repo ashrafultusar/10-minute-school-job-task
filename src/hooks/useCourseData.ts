@@ -1,7 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-
-
 
 export const useCourseData = () => {
   const { language } = useLanguage();
@@ -19,6 +18,7 @@ export const useCourseData = () => {
         }
       );
       const result = await res.json();
+      console.log(result);
       setData(result);
     };
 

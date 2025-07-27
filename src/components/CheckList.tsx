@@ -10,25 +10,19 @@ type ChecklistItem = {
 };
 
 type CheckListProps = {
-  data: {
-    checklist: ChecklistItem[];
-  };
+  data: ChecklistItem[]
 };
 
 const CheckList: React.FC<CheckListProps> = ({ data }) => {
-
 
 
   return (
     <div>
       <div className="max-w-sm mx-auto p-6 bg-white">
         {/* Price Section */}
-        <div className="mb-4 flex items-center space-x-2">
-          <p className="text-3xl font-bold text-gray-800">৳3850</p>
-          <p className="line-through text-gray-400 text-xl">৳5000</p>
-          <span className="text-sm text-white bg-orange-500 px-2 py-1 rounded">
-            ● 1150 ৳ ছাড়
-          </span>
+        <div className="mb-4">
+          <p className="text-3xl font-bold text-gray-800">৳1000 </p>
+        
         </div>
 
         <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded mb-4">
